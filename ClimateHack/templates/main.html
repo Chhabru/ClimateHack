@@ -1,0 +1,50 @@
+{% extends 'body.html' %}
+{% block head %}
+<title>Ocean Acidification Data</title>
+    <link href="{{url_for('static',filename='style2.css')}}" rel="stylesheet">
+    <script src="{{url_for('static',filename='main.js')}}"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Handjet:wght@500&display=swap" rel="stylesheet">
+{% endblock %}
+{% block body %}
+    <div class="container">
+        <div class="form-group" style="background: none;border-radius: 10px 10px 10px 10px">
+        <h1 style="font-size: 20px;">Please enter your data here and <span style="color: rgb(255, 64, 64)">fill all fields</span>. Note that real-time samples will be used in the future.</h1>
+        </div>
+        <form id = "form" method="post">
+        <div class="form-group" style="background-color: rgb(0, 103, 94);">
+            <label for="carbonate">Carbonate Concentration (in ppm):</label>
+            <input type="text" id="carbonate" name="carbonate" class="form-control">
+        </div>
+        <div class="form-group" style="background-color: rgb(0, 103, 99);"> 
+            <label for="carbon">Carbon Concentration (in ppm):</label>
+            <input type="text" id="carbon" name="carbon" class="form-control">
+        </div>
+        <div class="form-group" style="background-color: rgb(0, 103, 104);"> 
+            <label for="region"> Climate:</label>
+            <input type="text" id="region" name="region" class="form-control">
+        </div>
+        <div class="form-group" style="background-color: rgb(0, 103, 109);"> 
+            <label for="longitude">Longitude:</label>
+            <input type="text" id="logitude" name="longitude" class="form-control">
+        </div>
+        <div class="form-group" style="background-color: rgb(0, 103, 114);"> 
+            <label for="latitude">Latitude:</label>
+            <input type="text" id="latitude" name="latitude" class="form-control">
+        </div>
+        <div class="form-group" style="background-color: rgb(0, 103, 119);"> 
+            <label for="pH">pH:</label>
+            <input type="text" id="pH" name="pH" class="form-control">
+        </div>
+        <div class="form-group" id="submitgroup" style="border-radius: 0px 0px 10px 10px;padding-bottom: 0px;"> 
+        <input type="submit" class="btn btn-primary" onclick="submit()">
+        </div>
+        
+    </form><div class="form-group" style="background: none;padding-bottom: 0px;"> 
+        <a href="/database" target="_blank"><button id="bobo" class="btn btn-primary">Go To Database</button></a>
+        </div>
+        <!-- <script src="index.js"></script> -->
+    </div>
+
+{% endblock %}

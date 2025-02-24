@@ -1,0 +1,65 @@
+{% extends 'body.html' %}
+{% block head %}
+
+ <title>Database</title>
+ <script>
+    code = "boat";
+    var y = 0;
+    function showTable() {
+        var x = document.getElementById("password");
+        if (x.value === code) {
+            if (y !== 1) {
+                db.style.visibility = "visible";
+            }
+            else {
+                document.getElementById("warning").style.fontWeight = "1000";
+                setTimeout(() => {
+                    document.getElementById("warning").style.fontWeight = "normal";
+                }, 500);
+            }
+        } else {
+            db.style.visibility = "hidden";
+            document.getElementById("warning").innerHTML = "Wrong password!";
+            document.getElementById("warning").style.color = "red";
+            y = 1;
+        }
+    }
+ </script>
+{% endblock %}
+{% block body %}
+<form onsubmit="showTable(); return false">
+    <label>Enter Password: </label><input type="password" id="password" value="">
+</form>
+<style>
+    td {
+        border: solid;
+        padding:5px;
+    }
+    th {
+        border: solid;
+        padding:5px;
+    }
+</style>
+<p id="warning"></p>
+<table id = "db" style="visibility: hidden;border: 1px solid black;">
+    <tr>
+        <th>Carbonate Concentration</th>
+        <th>Carbon Concentration</th>
+        <th>Climate</th>
+        <th>Longitude</th>
+        <th>Latitude</th>
+        <th>pH</th>
+    </tr>
+    {% for data in data %}
+    <tr>
+        <td>{{ data.carbonate }}</td>
+        <td>{{ data.carbon }}</td>
+        <td>{{ data.climate }}</td>
+        <td>{{ data.xcoord }}</td>
+        <td>{{ data.ycoord }}</td>
+        <td>{{ data.ph }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
+

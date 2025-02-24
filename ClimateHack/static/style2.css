@@ -1,0 +1,175 @@
+/* General Page Styling */
+body {
+    background-color: #F0F6FE; /* Soft blue background */
+    font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Container Styling */
+.container {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 600px;
+    background: #004D40; /* Deep green-blue */
+    color: #E7DFD3;
+    border-radius: 10px;
+    /* box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); */
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+/* Heading Styling */
+h1 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+/* Form Group Styling */
+.form-group:not(#submitgroup) {
+    width: 100%;
+    text-align: center;
+    padding: 15px 15px 15px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    margin-bottom: 10px;
+} 
+
+a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 1);
+    width: calc(100%/2);
+}
+
+#submitgroup {
+    width: 100%;
+    text-align: center;
+    padding: 15px 15px 15px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+button {
+    width: 100%;
+    text-align: center;
+    padding: 15px 15px 15px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    margin-left: 14px;
+}
+
+/* Label Styling */
+.form-group label {
+    font-size: 16px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #e7dfd3;
+}
+
+/* Input Styling */
+.form-group input {
+    width: 100%;
+    /* padding: 10px; */
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+    transition: 0.3s ease-in-out;
+} 
+
+/* Input Focus Effect */
+.form-group input:focus {
+    outline: none;
+    border: 2px solid #80CBC4; /* Lighter green */
+}
+
+/* Submit Button */
+input[type=submit] {
+    width: 100%;
+    height: 50px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    background-image: linear-gradient(to right, #3B82F6, #6366F1);
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+/* Submit Button Hover Effect */
+input[type=submit]:hover {
+    background-image: linear-gradient(to right, #2563EB, #4F46E5);
+    transform: scale(1.02);
+}
+
+button {
+    width: 100%;
+    height: 50px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    background-image: linear-gradient(to right, #3B82F6, #6366F1);
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+button:hover {
+    background-image: linear-gradient(to right, #2563EB, #4F46E5);
+    transform: scale(1.02);
+}
+
+/* Paragraph Styling */
+.p {
+    font-size: 14px;
+    margin-top: 10px;
+    opacity: 0.8;
+}
+
+.loading::after {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    border: 4px solid transparent;
+    border-top-color: #ffffff;
+    border-radius: 50%;
+    animation: button-loading-spinner 1s ease infinite;
+}
+
+@keyframes button-loading-spinner {
+    from {
+        transform: rotate(0turn);
+    }
+
+    to {
+        transform: rotate(1turn);
+    }
+}
