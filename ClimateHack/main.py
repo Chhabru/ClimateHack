@@ -51,6 +51,10 @@ def result():
     y = session['latitude']
     ph = session['ph']
 
+    if not co2 or not carb or not clim or not x or not y or not ph:
+        return redirect(url_for('form'))
+
+
     if int(carb) < 60 or int(co2) >= 20 or int(ph) < 6.5:
         area = Area(xcoord = x, ycoord = y, carbon = co2, carbonate = carb, climate = clim, ph = ph)
         db.session.add(area)
@@ -121,3 +125,4 @@ if __name__ == "__main__":
     with app.app_context():
         db.create_all()
     app.run(debug=True)
+
